@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.使用Map类型控制网站表单提交</title>
+  </head>
+  <body>
+    <form action="" onsubmit="return post()">
+      接受协议：
+      <input type="checkbox" name="agreement" id="" error="请接受协议" />
+      我是学生:
+      <input type="checkbox" name="student" id="" error="该网站只对学生开放" />
+      <input type="submit" />
+    </form>
+  </body>
+  <script>
+    function post() {
+      let map = new Map();
+      let inputs = document.querySelectorAll("[error");
+      console.log(inputs);
+      inputs.forEach((item) => {
+        map.set(item, {
+          error: item.getAttribute("error"),
+          status: item.checked,
+        });
+      });
+      return [...map].every(([elem, config]) => {
+        config.status || alert(config.error);
+        return config.status;
+      });
+      // return false;
+    }
+  </script>
+</html>

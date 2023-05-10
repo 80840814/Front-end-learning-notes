@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原子组的替换</title>
+  </head>
+  <body>
+    <h1>asdas</h1>
+    <span>asdas</span>
+    <h2>sadasd</h2>
+  </body>
+  <script>
+    let hd = `
+    <h1>asdas</h1>
+    <span>asdas</span>
+    <h2>sadasd</h2>
+    `;
+    let reg = /<(h[1-6])>([\s\S]+)<\/\1>/gi;
+    console.log(hd.replace(reg, `<span>$2</span>`));
+    let res = hd.replace(reg, (p0, p1, p2) => {
+      return `<p>${p2}</p>`;
+    });
+    console.log(res);
+  </script>
+</html>

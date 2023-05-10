@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="houdunren" data="hd">houdunren.com</div>
+      <div class="houdunwang">houdunwang.com</div>
+      <div class="xiangjun"><!-- 向军大叔 --></div>
+      <span> 后盾人</span>
+    </div>
+    <script>
+      const div = document.querySelector(`#app`);
+      const span = document.querySelector("span");
+
+      // 标签节点为大写的标签名 如DIV、SPAN
+      console.log(div.tagName);
+      console.log(span.tagName);
+
+      // 文本节点为undefined
+      console.log(div.firstChild.tagName);
+
+      //属性节点为undefined
+      console.log(div.attributes.id.tagName);
+
+      // 注释节点为 undefined
+      const xj = document.querySelector(".xiangjun");
+      console.log(xj.childNodes[0].tagName);
+    </script>
+  </body>
+</html>

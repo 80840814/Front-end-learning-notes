@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.立即执行函数与块作用域解决冲突</title>
+  </head>
+  <body>
+    <button id="hd">aaqqqa</button>
+  </body>
+  <script>
+    // (function () {
+    //   console.log("SAdsadas");
+    // })();
+
+    // function sum(a, b) {
+    //   return a + b;
+    // }
+    // console.log(sum(1,3));
+
+    // function avg(total, year = 1) {
+    //   return Math.round(total / year);
+    // }
+    // console.log(avg(2000,2));
+
+    // function sortArray(array, type = "asc") {
+    // return array.sort(function(a,b){
+    //     return type=="asc"?a-b:b-a;
+    // })
+    // 箭头函数
+    //   return array.sort((a, b) => (type == "asc" ? a - b : b - a));
+    // }
+    // console.log(sortArray([1, 4, 5, 7, 2, 4, 3]));
+    // function sum(total, discount = 0, dis = 0) {
+    //   return total * (1 - discount) * (1 - dis);
+    // }
+    // console.log(sum(1000,0.1,0.2));
+
+    // function hd(a){
+    //     return a<=3;
+    // }
+    // let arr=[1,2,32,2,3,1,312,2].filter(hd)
+    // console.log(arr);
+
+    // var i=0;
+    // setInterval(() => {
+    //     console.log(++i);
+    // }, 1000);
+    // function event() {
+    //   alert(this.innerHTML);
+    // }
+    // document.getElementById("hd").addEventListener("click", event);
+    // function sum(...args){
+    //     return args.reduce((a,b)=>a+b);
+    // }
+    // function sum(){
+    //     return [...arguments].reduce((a,b)=>a+b);
+    // }
+    // console.log(sum(1,1,34,1,45,545,1));
+    // let hd = function () {
+    //   return 1 + 2;
+    // };
+    // 胖箭头
+    // let hd =  () =>{
+    //   return 1 + 2;
+    // };
+
+    // console.log(hd());
+    // 正常书写
+    // let hd = [1, 23, 2, 2, 4, 54, 5].filter(function (value, index) {
+    //   return value <= 5;
+    // });
+    // 初步优化
+    // let hd = [1, 23, 2, 2, 4, 54, 5].filter( (value, index) =>{
+    //   return value <= 5;
+    // });
+    // 二步优化
+    // let hd = [1, 23, 2, 2, 4, 54, 5].filter((value) => value <= 5);
+    let sum = [1, 23, 2, 2, 4, 54, 5].reduce((a, b) => a + b);
+
+    console.log(sum);
+  </script>
+</html>

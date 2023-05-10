@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.闭包案例按钮移动</title>
+  </head>
+  <style>
+    button {
+      position: absolute;
+    }
+  </style>
+  <body>
+    <button message="后盾人">houdunren</button>
+    <button message="hdcms">hdcms</button>
+  </body>
+  <script>
+    // let bts = document.querySelectorAll("button");
+    // // console.log(bts.innerHtml);
+    // bts.forEach(function (item) {
+    //   let left = 1;
+    //   item.addEventListener("click", function () {
+    //     setInterval(function () {
+    //       item.style.left = left++ + "px";
+    //     }, 100);
+    //   });
+    // });
+    let bts = document.querySelectorAll("button");
+    // console.log(bts.innerHtml);
+    bts.forEach(function (item) {
+      let bind = false;
+      item.addEventListener("click", function () {
+        if (!bind) {
+          bind = true;
+          let left = 1;
+          setInterval(function () {
+            item.style.left = left++ + "px";
+          }, 100);
+        }
+      });
+    });
+  </script>
+</html>

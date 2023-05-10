@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let cart = [
+      { name: "iphone", price: 10000 },
+      { name: "imac", price: 80000 },
+      { name: "ipad", price: 1000 },
+    ];
+    // function Maxprice(goods){
+    //     return cart.reduce(function(pre,cur){
+    //         return pre.price>cur.price?pre:cur;
+
+    //     });
+    // }
+    // console.log(Maxprice(cart));
+    function sum(goods) {
+      return goods.reduce(function (total, cur) {
+        return (total += cur["price"]);
+      }, 0);
+    }
+    let a = 2;
+    console.log(sum(cart));
+  </script>
+</html>

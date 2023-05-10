@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>闭包排序</title>
+  </head>
+  <body></body>
+  <script>
+    let sub = [
+      {
+        title: "盒子10",
+        click: 111,
+        price: 200,
+      },
+      {
+        title: "盒子11",
+        click: 111,
+        price: 10,
+      },
+      {
+        title: "盒子01",
+        click: 111,
+        price: 30,
+      },
+      {
+        title: "盒子03",
+        click: 111,
+        price: 680,
+      },
+    ];
+    function order(field, type = "asc") {
+      return function (a, b) {
+        if (type == "asc") return a[field] > b[field] ? 1 : -1;
+        return a[field] > b[field] ? -1 : 1;
+      };
+    }
+    let hd = sub.sort(order("price", "desc"));
+    console.table(hd);
+    // let hd = sub.sort(function (a, b) {
+    //   return a.price > b.price ? 1 : -1;
+    // });
+    // console.table(hd);
+  </script>
+</html>

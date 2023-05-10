@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hd = "houdunren.com";
+        console.log(hd.replace("com","top"));
+        let word= ["aaaphp","css"];
+        let string = "我喜欢学习css";
+        let replaceString = word.reduce((pre,word)=>{
+            return pre.replace(word,`<a href="?w=${word}">${word}</a>`)},string)
+        console.log(replaceString);
+        document.body.innerHTML+=replaceString;
+    </script>
+
+</body>
+</html>

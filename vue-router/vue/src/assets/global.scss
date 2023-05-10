@@ -1,0 +1,17 @@
+body{
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: bisque;
+    width: 100vw;
+    height: 100vh;
+}
+h2,h1{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+a.link-active {
+    background-color: #666;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <xj />
+    </div>
+    <script>
+      const todo = {
+        data() {
+          return { title: "demo" };
+        },
+        template: `<div>{{title}}</div>`,
+      };
+
+      const app = Vue.createApp({
+        comments: { xj: todo },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

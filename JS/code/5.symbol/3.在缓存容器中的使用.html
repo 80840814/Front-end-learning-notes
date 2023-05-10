@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Cache {
+      static data = {};
+      static set(name, value) {
+        this.data[name] = value;
+      }
+      static get(name) {
+        return this.data[name];
+      }
+    }
+
+    let user = {
+      name: "后盾人",
+      key: Symbol("缓存"),
+    };
+
+    let cart = {
+      name: "购物车",
+      key: Symbol("购物车"),
+    };
+
+    Cache.set(user.key, user);
+    Cache.set(cart.key, cart);
+    console.log(Cache.get(user.key));
+  </script>
+</html>

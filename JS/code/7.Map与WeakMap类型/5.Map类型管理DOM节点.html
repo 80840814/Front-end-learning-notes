@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>5.Map类型管理DOM节点</title>
+  </head>
+  <body>
+    <div name="后盾人">houdunren.com</div>
+    <div name="免费开源">hdcms.com</div>
+  </body>
+  <script>
+    let map = new Map();
+    document.querySelectorAll("div").forEach((item) => {
+      map.set(item, {
+        content: item.getAttribute("name"),
+      });
+    });
+    map.forEach((config, elem) => {
+      elem.addEventListener("click", () => {
+        alert(config.content);
+      });
+    });
+    console.log("hello");
+  </script>
+</html>

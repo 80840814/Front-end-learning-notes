@@ -1,0 +1,9 @@
+{% extends './views/demo.html' %}
+{% block content %}
+    <form action="/login" method="post">
+        <input type="text" name="username" id="" >
+        <input type="password" name="password" id="">
+        <input type="submit" vale="登录" >
+    </form>
+    {% include './views/footer.html' %}
+{% endblock %}

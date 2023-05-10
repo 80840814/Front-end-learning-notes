@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>继承内置类</title>
+  </head>
+  <body></body>
+  <script>
+    class Arr extends Array {
+      constructor(...args) {
+        super(...args);
+      }
+      first() {
+        return this[0];
+      }
+      max() {
+        return this.sort((a, b) => b - a)[0];
+      }
+      add(item) {
+        this.push(item);
+      }
+      remove(value) {
+        let pos = this.findIndex((item) => item == value);
+        this.splice(pos, 1);
+      }
+    }
+    let hd = new Arr(1, 2, 323, 432, 4, 4, 554, 65464, 561, 11);
+    console.log(hd.push(1111));
+    console.log(hd);
+    hd.remove(544);
+    console.log(hd);
+  </script>
+</html>

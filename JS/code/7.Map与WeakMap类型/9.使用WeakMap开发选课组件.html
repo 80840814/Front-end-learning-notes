@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.使用WeakMap开发选课组件</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    .content span {
+      border: 0px solid #00ff00;
+      background-color: #00ff00;
+      border-radius: 5px;
+      margin-left: 20px;
+      color: #ffffff;
+      font-size: larger;
+    }
+  </style>
+  <body>
+    <div class="lessons">
+      <ul>
+        <li><span>php</span><a href="javascript:;">+</a></li>
+        <li><span>js</span><a href="javascript:;">+</a></li>
+        <li><span>node</span><a href="javascript:;">+</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <strong id="count">一共选了俩门课</strong>
+      <p id="lists"><span></span></p>
+    </div>
+  </body>
+  <script>
+    class lesson {
+      constructor() {
+        this.lis = document.querySelectorAll("ul>li");
+        // console.log(this.lis);
+        this.countElem = document.getElementById("count");
+        this.listElem = document.getElementById("lists");
+        // console.log(this.listElem);
+        this.map = new WeakMap();
+      }
+      run() {
+        this.lis.forEach((li) => {
+          li.querySelector("a").addEventListener("click", (event) => {
+            const a = event.target;
+            // console.log(li);点击加号显示li类
+            const state = li.getAttribute("select");
+            if (state) {
+              li.removeAttribute("select");
+              this.map.delete(li);
+              a.innerHtml = "+";
+              a.style.backgroundColor = "green";
+            } else {
+              this.map.set(li);
+              li.setAttribute("select", true);
+              a.innerHtml = "-";
+              a.style.backgroundColor = "red";
+            }
+            this.renderr();
+          });
+        });
+      }
+      count() {
+        return [...this.lis].reduce((count, li) => {
+          return (count += this.map.has(li) ? 1 : 0);
+        }, 0);
+      }
+      lists() {
+        return [...this.lis]
+          .filter((li) => {
+            return this.map.has(li);
+          })
+          .map((li) => {
+            return `<span>${li.querySelector("span").innerHTML}</span>`;
+          })
+          .join("");
+        console.log(lis);
+      }
+
+      renderr() {
+        // this.countElem.innerHtml = `一共选了${this.count()}门课`;
+        this.countElem.innerHTML = `一共选了${this.count()}门课程`;
+        this.listElem.innerHTML = this.lists();
+        // console.log(countElem);
+        // console.log(this.count);
+        // this.countElem.innerHtml = "sdsa";
+      }
+    }
+    new lesson().run();
+  </script>
+</html>

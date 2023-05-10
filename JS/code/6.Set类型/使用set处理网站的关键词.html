@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用set处理网站的关键词</title>
+  </head>
+  <style>
+    body {
+      padding: 200px;
+    }
+  </style>
+  <body>
+    <input type="text" name="hd" id="" />
+    <ul></ul>
+  </body>
+  <script>
+    let obj = {
+      data: new Set(),
+      set keywords(word) {
+        this.data.add(word);
+      },
+      show() {
+        let ul = document.querySelector("ul");
+        ul.innerHTML = "";
+        this.data.forEach(function (value) {
+          ul.innerHTML += `<li>${value}</li>`;
+        });
+      },
+    };
+
+    let input = document.querySelector("[name='hd");
+    input.addEventListener("blur", function () {
+      obj.keywords = this.value;
+      obj.show();
+    });
+  </script>
+</html>

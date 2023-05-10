@@ -1,0 +1,55 @@
+div,
+img,
+i,
+span,
+li,
+ul,
+a,
+input {
+    box-sizing: border-box;
+}
+input,
+textarea,
+button,
+a {
+  /* 表单或者a标签在手机点击时会出现边框或彩色的背景区域，意思是去除点击背景框 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    /* 字体大小/行高/字体 */
+    font: 12px/1.5 Microsoft YaHei;
+    color: #101010;
+    background-color: #f5f5f5;
+}
+html,
+body {
+    margin: 0;
+}
+ul,
+li {
+    margin: 0;
+    padding:0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #101010;
+}
+img {
+    vertical-align: top;
+}
+input{
+    outline: none;
+    border: none;
+}
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+i{
+    font-style: normal;
+}

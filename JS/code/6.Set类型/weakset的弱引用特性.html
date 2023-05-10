@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weakset的弱引用特性</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = { name: "houren" };
+    let set = new WeakSet();
+    set.add(hd);
+    console.log(set);
+    //弱引用：weakset不会让引用次数加1
+    // weakset不能使用循环遍历，以及数据的.keys .size
+  </script>
+</html>

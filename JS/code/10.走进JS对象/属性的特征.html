@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>属性的特征</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "像海军",
+      age: 12,
+    };
+    // user.lesson = "css";
+    // console.log(user);
+    // delete user.lesson;
+    // console.log(user);
+    // let hd = ["1221", "233"];
+    Object.seal(user);
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+    user.site = "houdunren.com";
+    console.log(user);
+
+    if (!Object.isSealed(user)) {
+      user.site = "houdunren.com";
+      delete user.name
+    }
+  </script>
+</html>

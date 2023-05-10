@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>全局匹配</title>
+  </head>
+  <body>
+    <main>denidemdede</main>
+  </body>
+  <script>
+    //高版本浏览器
+    //     let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
+    //     const body = document.body;
+    //     const hd = body.innerHTML.matchAll(reg);
+    //     let constents = [];
+    //     for (const iterator of hd) {
+    //       constents.push(iterator[2]);
+    //     }
+    //     console.table(constents);
+    //     // 低版本浏览器
+    //     String.prototype.matchAll = function(reg) {
+    //   let res = this.match(reg);
+    //   if (res) {
+    //     let str = this.replace(res[0], "^".repeat(res[0].length));
+    //     let match = str.matchAll(reg) || [];
+    //     return [res, ...match];
+    //   }
+    // };
+    // let str = "houdunren";
+    // console.dir(str.matchAll(/(U)/i));
+    const main = document.querySelector("body main");
+    main.innerHTML = main.innerHTML.replace(
+      /de/g,
+      `<a href="https://www.baidu.com">$&</a>`
+    );
+  </script>
+</html>

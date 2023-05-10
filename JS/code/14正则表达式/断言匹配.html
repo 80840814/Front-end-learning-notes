@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>断言匹配</title>
+  </head>
+  <body>
+    <!-- <main>后盾人不断分享视频教程，学习后盾人教程提升编程能力。</main> -->
+    <input type="text" name="username" id="" />
+  </body>
+  <script>
+    // let main = document.querySelector("main");
+    // let reg = /后盾人(?=教程)/g;
+    // main.innerHTML = main.innerHTML.replace(
+    //   reg,
+    //   `<a href="https://www.baidu.com">$&</a>`
+    // );
+    // let lessons = `
+    // js,200元,300次
+    // css,150元,300次
+    // nodejs,200.00元,300次
+    // `;
+    // let reg = /(\d+)(.00)?(?=元)/gi;
+    // lessons=lessons.replace(reg, (v, ...args) => {
+    //     // console.log(args[]);
+    //   args[1] = args[1] || ".00";
+    //   return args.splice(0, 2).join("");
+    // });
+    // console.log(lessons);
+    // let hd="qw1111eqwwqewewqeq1111"
+    // const reg=/(?<=qw)\d+/ig;
+    // console.log(hd.match(reg));
+    // let users=`
+    // demo:13222220098
+    // demo:13211120098
+    // `
+    // let reg=/(?<=\d{7})\d{4}/ig
+    // users=users.replace(reg,v=>{
+    //     return "*".repeat(4)
+    // })
+    // console.log(users);
+    //     let hd='sadasd11xsdaa'
+    //     let reg=/[a-z]+(?!\d)$/i
+    //     console.log(hd.match(reg));
+    const input = document.querySelector(`[name="username"]`);
+    input.addEventListener("keyup", function () {
+      const reg = /^(?!.*向军.*)[a-z]{5,6}$/gi;
+      console.log(this.value.match(reg));
+    });
+  </script>
+</html>

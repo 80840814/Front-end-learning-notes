@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/05-19.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/05-19.html"
+        },
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/text/05-20.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/text/05-20.html"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+</head>
+<body>
+    <script>
+        // let a=5,b=4;
+        // let c=a+b;
+        // console.log(c);
+        // a+=5;
+        // console.log(a);
+    //    比较运算符
+    // let a=1,b=2,c=1;
+    // console.log(a==c);
+    // console.log(typeof a);
+    // let span = document.querySelector('#msg');
+    // document
+    // .querySelector('[name="age"]')
+    // .addEventListener("keyup",function () {
+    //      // msg="";
+    //     // if (this.value>=90) { 
+    //     //     msg="年龄不能超过90岁";
+            
+    //     // }
+    //     // span.innerHTML=msg;
+    //     span.innerHTML = this.value>=90?"年龄不能超过90岁" : "";
+    // })
+    //////////////
+    // let a = 1,b = 1;
+    // if(a==1&&b==1){
+    //     console.log("都是1");
+    // }
+    // if(a==1||b==2){
+    //     console.log("有一个1就行");
+    // }
+    // if(a==1||b!=2){
+    //     console.log("该表达式成立");
+    // }
+
+    </script>
+    <input type="text" name="pwd">
+    <input type="text" name="rpwd">    
+    <br>
+    <span name="msg"></span>
+    <script>
+        function query(name){
+            return document.querySelector(`[name='${name}']`);
+        }
+        console.log(query('pwd'));
+        let inputs = document.querySelectorAll(
+            "[name='pwd'],[name='rpwd']"
+        );
+        // console.log(inputs);
+        [...inputs].map(item=>{
+            item.addEventListener('keyup',function(){
+                let msg="";
+               if (query('pwd').value!=query('rpwd').value ||query('pwd').value.length<5) 
+               {
+                    msg='俩次密码不一致或者长度小于5位';
+               }
+               query("msg").innerHTML = msg;
+            })
+        })
+    </script>
+</body>
+</html>

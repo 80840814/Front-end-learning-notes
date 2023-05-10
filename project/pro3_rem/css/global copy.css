@@ -1,0 +1,22 @@
+body {
+    font: 24px/1.5 MiMicrosoft YaHeir;
+    color: #000;
+}
+html,
+body,
+ul,
+p {
+    margin: 0;
+}
+ul{
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img {
+    vertical-align: top;
+}

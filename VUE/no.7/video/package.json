@@ -1,0 +1,22 @@
+{
+  "name": "video",
+  "private": true,
+  "version": "0.0.0",
+
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "global": "^4.4.0",
+    "json-server": "^0.17.1",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "mockjs": "^1.1.0",
+    "sass": "^1.57.1",
+    "vite": "^4.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原子表</title>
+  </head>
+  <body>
+    <!-- <input type="text" name="username" /> -->
+    <h1>sdasd</h1>
+    <H4>sdsadadas</H4>
+    <h3>dsaasdas</h3>
+  </body>
+  <script>
+    // let username = document.querySelector(`[name="username"]`);
+    // // console.log(username);
+    // username.addEventListener("keyup", function () {
+    //   console.log(this.value.match(/^[a-z]\w{4,8}$/i));
+    // });
+    // let hd="dasdasaweqweqw.+()"
+    // console.log(hd.match(/[^as]/ig));
+    // let hd="dasdasaweqweqw.+()"
+    let body = document.body;
+    let reg = /<(h[1-6])>[\s\S]*<\/\1>/gi;
+    body.innerHTML = body.innerHTML.replace(reg, "");
+  </script>
+</html>

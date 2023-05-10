@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo任务列表中使用WeakSet</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin: 200px;
+    }
+    li {
+      list-style: none;
+      margin-bottom: 30px;
+      border: 1px solid #000;
+    }
+    .remove {
+      background-color: #ccc;
+    }
+  </style>
+  <body>
+    <ul>
+      <li>demo<a href="javascript:;">x</a></li>
+      <li>demo<a href="javascript:;">x</a></li>
+      <li>demo<a href="javascript:;">x</a></li>
+    </ul>
+  </body>
+  <script>
+    class Todo {
+      constructor() {
+        this.items = document.querySelectorAll("ul>li");
+        // console.log(this.items);
+        this.lists = new WeakSet();
+        this.items.forEach((item) => this.lists.add(item));
+        // console.log(this.lists);
+      }
+      run() {
+        this.addEvent();
+      }
+
+      addEvent() {
+        this.items.forEach((item) => {
+          let a = item.querySelector("a");
+          //    console.log(a);
+          a.addEventListener("click", (event) => {
+            const parentElement = event.target.parentElement;
+
+            if (this.lists.has(parentElement)) {
+              parentElement.classList.add("remove");
+              this.lists.delete(parentElement);
+            } else {
+              parentElement.classList.remove("remove");
+              this.lists.add(parentElement);
+            }
+          });
+        });
+      }
+    }
+    new Todo().run();
+  </script>
+</html>

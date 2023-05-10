@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <script>
+        // let name = "视频";
+        // switch(name){
+        //     case '产品': 
+        //         console.log("11111");
+        //         break;
+        //     case '视频':
+        //         console.log("222");
+        //         break;
+        //     default:
+        //         console.log(233333);
+        // }
+        // let error= 'notice';
+        // switch(error){
+        //     case 'error':
+        //     case 'warning':
+        //         console.log('提示或者警告消息');
+        //         break;
+        //     default:
+        //         console.log('错误信息');
+        // }
+        function message (age){
+            let msg="";
+            switch(true){
+                case age>60:
+                    msg="老年";
+                    break;
+                case age>40:
+                    msg="中年";
+                    break;
+                case age>28:
+                    msg="壮年";
+                    break;
+                
+                   
+            }
+            return msg;
+        }
+        console.log(message(90));
+    </script>
+</body>
+</html>

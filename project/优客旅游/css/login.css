@@ -1,0 +1,31 @@
+body {
+	/* background: url(../img/headline.jpg) repeat; */
+	/* background-color: #000; */
+	
+}
+
+.login {
+	margin-top: 150px;
+	border: 5px #0077AA solid;
+	border-radius: 15px;
+	color: #fff;
+	width: 300px;
+	/* margin: 200px auto; */
+}
+.control-label {
+	color: #0077AA;
+	font-size: 20px;
+}
+.control-title {
+	color: #0077AA;
+}
+.form-group {
+	/* margin: 100px auto; */
+	color: #fff;
+	margin-top:50px ;
+}
+
+.btn {
+	color: #fff;
+}
+

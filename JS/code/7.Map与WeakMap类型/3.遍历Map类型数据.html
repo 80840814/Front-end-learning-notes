@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.遍历Map类型数据</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = new Map([
+      ["demo", "demo"],
+      ["sda", "sda"],
+    ]);
+    hd.set("name", "alice");
+    console.log(hd.keys());
+    console.log(hd.values());
+    console.log(hd.entries());
+    for (const key of hd.keys()) {
+      console.log(key);
+    }
+
+    console.log("value--------");
+    for (const value of hd.values()) {
+      console.log(value);
+    }
+
+    for (const entrie of hd.entries()) {
+      console.log(entrie);
+    }
+    hd.forEach((value, key) => {
+      console.log(value, key);
+    });
+    console.log("hello");
+  </script>
+</html>

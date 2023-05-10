@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: aquamarine;
+            height: 200px;
+            width: 200px;
+            /* css属性 过渡时间 运动速度 延迟时间 */
+            transition: border-radius 3s cubic-bezier(0.72,-0.04, 1, 1) 2s;
+            /* transition: width 2s; */
+            /* transition-duration: 2s; */
+            /* 过渡时间 */
+            /* transition-delay: 2s;
+            /* 延迟 */
+            /* transition-property: width;
+            transition: width 2s,height 2s 2s, boder-radius 2s 4s; */
+            /* 先宽后高，延迟2s,然后变圆角，过渡2s延迟4s */
+        }
+        .box:hover{
+            border-radius: 100px;
+            /* width: 400px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

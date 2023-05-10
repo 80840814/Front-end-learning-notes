@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map类型增删改查操作</title>
+  </head>
+  <body></body>
+  <script>
+    let obj = {
+      name: "houdunren",
+    };
+    let map = new Map();
+    map.set("obj", "dsadasd");
+    map.set("demo", "demo");
+    //展示
+    console.log(map);
+    //清空
+    console.log(map.clear());
+    //删除
+    console.log(map.delete(obj));
+    //检测
+    console.log(map.has("demo"));
+  </script>
+</html>

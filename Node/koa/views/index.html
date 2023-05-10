@@ -1,0 +1,17 @@
+{% extends './views/demo.html' %}
+    {% block content %}
+        <ul>
+            {% for stl in stls %}
+            <li>{{stl}}</li>
+            {% endfor %}
+        </ul>
+        {% if isLogin %}
+        <p>欢迎{{username}}</p>
+        {% else %}
+        <p>请登录</p>
+        {% endif %} 
+        {% include './views/footer.html' %}
+    {% endblock %}  
+    
+
+  

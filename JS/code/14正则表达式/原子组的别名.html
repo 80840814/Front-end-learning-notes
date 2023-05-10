@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原子组别名</title>
+  </head>
+  <body>
+    <a id="" href="asdas">dsaaaa</a>
+    <a href="asaaadas">dsaa</a>
+    <a href="asdasaa">dsaaaaaaa</a>
+  </body>
+  <script>
+    // let hd = `
+    // <h1>asdas</h1>
+    // <span>asdas</span>
+    // <h2>sadasd</h2>
+    // `;
+    // const reg = /<(h[1-6])>(?<con>.*?)<\/\1>/gi;
+    // console.log(hd.replace(reg, "<h4>$<con></h4>"));
+    const main = document.querySelector("body");
+    const reg = /<a.*?href=(['"])(?<links>.*?)>(?<title>.*?)<\/a>/gi;
+    const links = [];
+    for (const iterator of main.innerHTML.matchAll(reg)) {
+      links.push(iterator["groups"]);
+    }
+    console.log(links);
+  </script>
+</html>

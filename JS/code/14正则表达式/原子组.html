@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原子组</title>
+  </head>
+  <body>
+    <input type="text" name="mail" value="123@qq.com" />
+    <span></span>
+  </body>
+  <script>
+    let mail = document
+      .querySelector(`[name="mail"]`)
+      .addEventListener("keyup", function () {
+        reg = /^[\w-]+@([\w-]+\.)+(com|cn|top|net|cc)$/i;
+        document.querySelector("span").innerHTML = reg.test(this.value)
+          ? "正确"
+          : "错误";
+      });
+  </script>
+</html>

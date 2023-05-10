@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const site = Symbol("网站名称");
+    class User {
+      constructor(name) {
+        this[site] = "后盾人";
+        this.name = name;
+      }
+      getName() {
+        return `${this[site]}-${this.name}`;
+      }
+    }
+    const hd = new User("向军大叔");
+    console.log(hd.getName());
+    for (const key in hd) {
+      console.log(key);
+    }
+  </script>
+</html>

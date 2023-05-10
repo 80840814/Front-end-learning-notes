@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用递归获取标签注释文本</title>
+  </head>
+  <body>
+    <!-- sdas -->
+    <div>
+      <ul>
+        <li>
+          <div><span> <!-- sdas --></span></div>
+        </li>
+        <li>
+          <div><span> <!-- sdas --></span></div>
+        </li>
+        <li>
+          <div><span></span></div>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    function all(el, nodeType = 1) {
+      const nodes = [];
+      Array.from(el.childNodes).map((node) => {
+        if ((node.nodeType = nodeType)) nodes.push(node);
+        if ((node.nodeType = 1)) nodes.push(...all(node, nodeType));
+      });
+      return nodes;
+    }
+    console.log(all(document.body),1);
+  </script>
+</html>

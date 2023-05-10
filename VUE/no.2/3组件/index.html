@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/x-template" id="hdTemplate">
+      <h2>demo2</h2>
+      <h3>demo3</h3>
+    </script>
+
+    <script>
+      const app = Vue.createApp({
+        template: `<div>asdassad<hd /><hd /></div>`,
+      });
+      //全局定义
+      app.component("hd", {
+        template: "#hdTemplate",
+      });
+      //   app.component("dhxj", {
+      //     template: "#hdTemplate",
+      //   });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>

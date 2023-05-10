@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商城右侧通栏导航</title>
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <style>
+        body,ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        } 
+        .sliderbar {
+            width: 5px;
+            height: 100%;
+            background-color: #666;
+            position: fixed;
+            top: 0;
+            right: 0;
+            position: absolute;
+        }
+        .sliderbar ul{
+            width: 50px;
+            height: 208px;
+            /* background-color: red; */
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            margin-top: -104    px;
+        }
+        .sliderbar ul li {
+            width: 50px;
+            height: 50px;
+            background: #666;
+            margin: 2px 8px;
+            position: relative;
+        }
+        .sliderbar ul li i {
+            width: 50px;
+            height: 50px;
+            background-color:#666;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+        }
+      
+        .sliderbar ul li span {
+            display: block;
+            width: 0px;
+            overflow: hidden;
+            height: 50px;
+            background-color: #666;
+            position: absolute;
+            top: 0;
+            right: 50px;
+            background-color: red;
+            color: #fff;
+            text-indent: 20px ;
+            line-height: 50px;
+            transition: width 1s;
+            
+        }
+        .sliderbar ul li:hover i {
+            background-color: red;
+        }
+        .sliderbar ul li:hover span {
+            width:120px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="sliderbar">
+        <ul>
+            <li>
+                <i class="iconfont icon-kefu"></i>
+                <span>联系客服</span>
+            </li>
+            <li>
+                <i class="iconfont icon-kefu"></i>
+                <span>联系客服</span>
+            </li>
+            <li>
+                <i class="iconfont icon-kefu"></i>
+                <span>联系客服</span>
+            </li>
+            <li>
+                <i class="iconfont icon-gouwuche"></i>
+                <span>联系客服</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

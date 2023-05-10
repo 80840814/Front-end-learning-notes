@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hd = "houdunren.com";
+        
+        console.log(hd.indexOf("h"));
+        console.log(hd.includes("o",8));
+        console.log(hd.lastIndexOf('o',9));
+        console.log(hd.startsWith("o"));
+        console.log(hd.toLowerCase().endsWith("m"));
+        let word= ["aaaphp","css"];
+        let string = "我喜欢学习css";
+        //如果第一次为真，后续判断就为真，要是为假，进行判断下一个
+        let status = word.some((word)=>{
+            // console.log(word);
+            return string.includes(word);
+        });
+        if (status) {
+            console.log("找到了关键词");
+        }else{
+            console.log("查找失败");
+        }
+    </script>
+</body>
+</html>

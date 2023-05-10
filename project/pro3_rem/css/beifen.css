@@ -1,0 +1,38 @@
+.m-header {
+    height: 50px;
+    margin: 18px 19px 0 29px;
+    display: flex;
+    align-items: center;
+}
+.m-header a.logo {
+    flex-grow: 1;
+}
+.m-header a.logo img{
+    width: 146px;
+
+}
+.m-header a.search {
+    margin-right: 49px;
+}
+.m-header a.search img {
+    width: 38px;
+
+}
+.m-header a.login {
+    margin-right: 42px;
+}
+.m-header a.login img {
+    width: 46px;
+    
+}
+.m-header a.download {
+    /* display: block; */
+    width: 144px;
+    height: 48px;
+    background-color: #FF9F00;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+    font-size: 24px;
+    border-radius: 8px;
+}

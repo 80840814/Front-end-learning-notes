@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <title>我的主页</title>
+ 
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css" media="screen" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="container">
+                <div class="intro">
+                    <div class="user-warp img">
+                        <img src="http://q1.qlogo.cn/g?b=qq&nk=80840814&s=640" alt="可乐云小站">
+                    </div>
+                    <div class="nickname">我的主页</div>
+                    <div class="description">
+                        <p>“今天的不开心就此于止吧，明天依旧要光芒万丈呀”</p>
+                    </div>
+                    <div class="zuobiao">
+                        <i class="ico_map"></i>
+                        <span>中国</span>
+                        <span style="margin-left: 10px;">
+                            <input id="switch_default" type="checkbox" class="switch_default">
+                            <label for="switch_default" class="toggleBtn"></label>
+                        </span>
+                    </div>
+                    <div class="menu navbar-right links">
+                        <a class="menu-item" href="http://yixiaomo.top/" target="_blank">首页</a> ·
+                        <a class="menu-item" href="http://rem.yixiaomo.top/" target="_blank">rem项目</a> ·
+                        <a class="menu-item" href="http://fluid.yixiaomo.top/" target="_blank">流式布局</a> ·
+                        <a class="menu-item" href="http://web.yixiaomo.top/" target="_blank">PC端项目</a> ·
+                        
+                        <!-- <a href="#">博客</a> -->
+                        <center>
+                            <div id="header"></div>
+                            <div id="main">
+                                <div class="demo">
+                                    
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                    <div style=" line-height: 20px;font-size: 9pt;">
+                        <p>"今天的不开心就此于止吧，明天依旧要光芒万丈呀"</p>
+                        <p style="margin-left: 8rem;font-size: 8pt;"><small>—— 忆小陌</small></p>
+                    </div>
+                    <br>
+                    <center>
+                        <!-- <ul id="donateBox" class="list pos-f tr3">
+                            <li id="AliPay">AliPay</li>
+                            <li id="WeChat">WeChat</li>
+                            <li id="QQ">QQ</li>
+                        </ul> -->
+                        <div id="QRBox" class="pos-f left-100">
+                            <div id="MainBox"></div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="footer">
+            <ul>
+                <li style="list-style: none;"><a href="https://beian.miit.gov.cn/">陕ICP备18022670号-3</a></li>
+            </ul>
+
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/clipboard.min.js"></script>
+<script src="./js/APlayer.js"></script>
+<script>
+$(function(){
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayQR = 'https://www.kljs6.com/Tool/skm/zfbpay.png';
+    var WeChanQR = 'https://www.kljs6.com/Tool/skm/wxpay.png';
+    var QQQR = "https://www.kljs6.com/Tool/skm/qqpay.png";
+
+    function showQR(QR) {
+        if (QR) {
+            MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#DonateText,#donateBox,#github').addClass('blur');
+        QRBox.fadeIn(300, function (argument) {
+            MainBox.addClass('showQR');
+        });
+    }
+
+    $('#donateBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPay') {
+            showQR(AliPayQR);
+        } else if (thisID === 'WeChat') {
+            showQR(WeChanQR);
+        } else if (thisID === 'QQ') {
+            showQR(QQQR);
+        }
+    });
+
+    MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+            QRBox.fadeOut(300, function (argument) {
+                MainBox.removeClass('hideQR');
+            });
+            $('#DonateText,#donateBox,#github').removeClass('blur');
+        }, 600);
+    });
+
+    let ap3 = new APlayer({
+        element: document.getElementById('player3'),//样式1
+        narrow: false,
+        autoplay: false,
+        showlrc: true,
+        preload: 'auto',
+        music: {
+            title: '解药(新版)',
+            author: '来一碗老于',
+            url: 'https://www.kljs6.com/zy/bgm.mp3',
+            pic: './img/tm.png'
+        }
+    });
+    ap3.init();
+    
+    let _Blog = window._Blog || {};
+    const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+    const isDark = currentTheme === 'dark';
+    if (isDark) {
+        document.getElementById("switch_default").checked = true;
+    } else {
+        document.getElementById("switch_default").checked = false;
+    }
+    _Blog.toggleTheme = function () {
+        if (isDark) {
+            document.getElementsByTagName('body')[0].classList.add('dark-theme');
+        } else {
+            document.getElementsByTagName('body')[0].classList.remove('dark-theme');
+        }
+        document.getElementsByClassName('toggleBtn')[0].addEventListener('click', () => {
+            if (document.getElementsByTagName('body')[0].classList.contains('dark-theme')) {
+                document.getElementsByTagName('body')[0].classList.remove('dark-theme');
+            } else {
+                document.getElementsByTagName('body')[0].classList.add('dark-theme');
+            }
+            window.localStorage && window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light',)
+        })
+    };
+    _Blog.toggleTheme();
+})
+</script>
+</html>

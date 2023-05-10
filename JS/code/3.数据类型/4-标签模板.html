@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+
+        }
+        li:nth-child(odd){
+            background: skyblue;
+            color: #fff;
+        }
+        li {
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        li>a {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // let name = "厚度人";
+        // let web = 'houdunren.com';
+        // console.log(tag`在线教程${name},网址是${web}。`);
+        // function tag (strings,name,web){
+        //     console.log(web);
+        //     console.log(strings); 
+        // }
+        let lessons=[
+            {title:"这个是一个测试信息",author:"hundunren"},
+            {title:"这个是2个测试信息",author:"hundunren"},
+            {title:"这个3测试信息",author:"hundunren"}
+        ];
+        function template(){
+            return`<ul>
+                ${lessons
+                    .map(item=>links`<li>作者：${item.author},课程：${item.title}</li>`)
+                    .join("")}
+                </ul>`;
+        }
+        // function links (strings,...vars){
+        //    return strings
+        //    .map((str,key)=>{
+        //     return (
+        //         str + (vars[key]
+        //         ?vars[key].repalce(
+        //             "这个",
+        //             `<a href="http://yixiaomo.top">这个</a>`
+        //         )
+        //             : "")   
+        //     );
+        //    })
+        //    .join("");
+        // }
+
+        function links(strings,...vars){
+            return strings.map((str,key)=>{
+                return str+(vars[key]?
+                vars[key].replace('这个',`<a href="http://yixiaomo.top">这个</a>`)
+                :"");
+            })
+            .join("");
+        }
+        document.body.innerHTML+=template();
+
+    </script>
+</body>
+</html>

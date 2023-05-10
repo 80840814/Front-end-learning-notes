@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" name="password">
+    <span id="msg"></span>
+    <script>
+        document.querySelector("[name='password']")
+        .addEventListener('keyup',function(){
+            let length = this.value.length;
+            let span = document.querySelector('#msg');
+            if (length>10) {
+                msg='密码很安全';
+            }else if (length>6) {
+                msg='中级安全';
+            }else {
+                msg='密码太弱';
+            }
+            span.innerHTML = msg;
+        })
+    </script>
+</body>
+</html>

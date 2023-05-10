@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.Map类型转换操作</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = new Map([
+      ["demo", "demo"],
+      ["sda", "sda"],
+    ]);
+    // 转为数组
+    // console.log([...hd]);
+    // console.log([...hd.entries()]);
+    // console.log([...hd.keys()]);
+    // for (const [key,value] of hd) {
+    //     console.log(key,value);
+    // }
+    // 点语法展开变为数组
+    // 过滤
+    // 返回，第一个值包含demo的值
+    // 将返回值返回到新数组
+    // 打印出即可
+    let newArr = [...hd].filter((item) => {
+      // 返回，第一个值包含demo的值
+      return item[1].includes("demo");
+    });
+    let edu = new Map(newArr);
+    console.log(...edu.values());
+  </script>
+</html>

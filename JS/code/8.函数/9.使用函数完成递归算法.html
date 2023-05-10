@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function factorial(num) {
+    //   // 正常书写
+    //   //   if (num == 1) {
+    //   //     return 1;
+    //   //   }
+    //   //   return num * factorial(num - 1);
+    //   // 简写
+    //   return num == 1 ? 1 : num * factorial(--num);
+    // }
+    // ；流程
+    //     return 3*factorial(2-1);
+    //     return 2*factorial(2-1);
+    //     return 1;
+    // //为1之后进行返回
+    //     return 3*2*1;
+    //     // 第二次的返回的结果放在第一次的factorial(2-1);
+    //     return 2*1;
+    //     // 把第三次返回的结果放在第二次的factorial(2-1);
+    //     return 1;
+    // function sum(...args) {
+    // //   console.log(args);
+    // //   if (args.length == 0) {
+    // //     return 0;
+    // //   }
+    // //   //弹出后面的一个数字
+    // //   return args.pop() + sum(...args);
+    // return args==0?0:args.pop()+sum(...args);
+    // }
+    // console.log(sum(1, 23, 21, 32, 4));
+
+    // console.log(factorial(4));
+    function start(sum) {
+      // if (sum == 0) {
+      //   return "";
+      // }
+      // document.write("*".repeat(sum) + "<br/>");
+      // start(--sum);
+      // document.write("*".repeat(sum) + "<br/>")||start(--sum);
+
+      return sum == 0
+        ? ""
+        : document.write("*".repeat(sum) + "<br/>") || start(--sum);
+    }
+    start(6);
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数声明的多种方式</title>
+  </head>
+  <body></body>
+  <script>
+    // 对象方式
+    // let func = new Function("title", "console.log(title)");
+    // // 参数函数体
+    // func("dasdasdasds");
+    // 字面量
+    // function hd(title){
+    //   console.log(title);
+    // }
+    // hd("daasas");
+    // let cms = function (title) {
+    //   console.log(title);
+    // };
+    let user = {
+      name: null,
+      setUsername: function (name) {
+        this.name = name;
+      },
+      getUsername: function () {
+        return this.name;
+      },
+    };
+    user.setUsername("sdssa");
+    console.log(user.getUsername());
+  </script>
+</html>

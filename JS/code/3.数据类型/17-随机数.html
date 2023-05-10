@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 随机数>=0~<1
+        // console.log(Math.random());
+        // //0~5   0`~0.7
+        // Math.floor(Math.random()*(5+1))  
+        // // 想取的最大值，向下取整 随机数*（最大值+1）
+        // console.log(Math.floor(Math.random()*(5+1)));
+
+        // // 从2~5的随机数
+        // //min+Math,floor(Math,random()*(min+1))
+        // console.log(2+Math.floor(Math.random()*(3+1)));
+        // //随机点名
+        // 从0开始
+        let std=["arry","alice","mawu","tom","toms"];
+        // console.log(std.length);
+        // console.log(std);
+        // const index=(Math.floor(Math.random()*std.length));
+        // console.log(std[index]);
+        // 从1~3开始
+        // const index2=(2+Math.floor(Math.random()*(std.length-1)));
+        // console.log(std[index2]);
+
+        // // 2~3
+        // const index3=2+Math.floor(Math.random()*(4-2));
+        // console.log(index3);
+
+        function arryrandomval ue(arry,start=1,end) {
+            end=end?end:arry.length;
+            start--;
+            const index=start+Math.floor(Math.random()*(end-start));
+            return arry[index];
+        }
+        console.log(arryrandomvalue(std,1,4));
+    </script>
+</body>
+</html>

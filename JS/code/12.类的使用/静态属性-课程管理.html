@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>课程管理</title>
+  </head>
+  <body></body>
+  <script>
+    const data = [
+      { name: "js", price: 100 },
+      { name: "mysql", price: 212 },
+      { name: "vue.js", price: 98 },
+    ];
+    class Lesson {
+      constructor(data) {
+        this.model = data;
+      }
+      get price() {
+        return this.model.price;
+      }
+      get name() {
+        return this.model.name;
+      }
+      //批量生成对象
+      static createBatch(data) {
+        return data.map((item) => new Lesson(item));
+      }
+      //最贵的课程
+      static MaxPrice(collection) {
+        return collection.sort((a, b) => b.price - a.price)[0];
+      }
+    }
+    const lessons = Lesson.createBatch(data);
+    console.log(lessons);
+    console.log(Lesson.MaxPrice(lessons).name);
+  </script>
+</html>

@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "Live Preview",
+			"workspacePath": "d:\\demo\\30day\\vue-router",
+			"problemMatcher": [],
+			"label": "Live Preview: Run Server"
+		}
+	]
+}

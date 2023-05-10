@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原型链属性的检测</title>
+  </head>
+  <body></body>
+  <script>
+    let a = { url: "houdunren" };
+    let b = { name: "demo" };
+    Object.prototype.web = "hundunren";
+    // in不止检测对象还检测原型链
+    // console.log("web" in a);
+    Object.setPrototypeOf(a, b);
+    console.log("name" in a);
+    // hasOwnProperty只遍历对象
+    console.log(a.hasOwnProperty("url"));
+  </script>
+</html>

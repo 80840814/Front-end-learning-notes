@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "";
+    src: url();
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica
+    neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe
+    ui symbol, noto color emoji;
+
+    font-size: 14px/1.5;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+
+}
+.container{
+    width: 1226px;
+    margin: 0 auto;
+}
+/* .clearfix{
+    overflow: hidden;
+} */
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+

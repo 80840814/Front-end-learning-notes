@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半透明的遮罩</title>
+    <style>
+        .box{
+            
+            height: 200px;
+            width: 200px;
+            border: 2px solid red;
+            /* 防止变形 */
+            position: relative;
+
+        }
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 防止图片变形 */
+        }
+        .box::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            transition: background-color .5s;
+        }
+        .box:hover::after{
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img.png" alt="">
+    </div>
+</body>
+</html>

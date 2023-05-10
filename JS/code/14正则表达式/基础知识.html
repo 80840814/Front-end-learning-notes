@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基础知识</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = "houdnren1231221aaa";
+    // // 匹配数值
+    // console.log(hd.match(/\d+/g));
+    // // 匹配非数值
+    // console.log(hd.match(/\D+/g));
+    // // 匹配空白
+    // console.log(/\s/.test("h d"));
+    // //字母数字下划线
+    // console.log(hd.match(/\w+/));
+    // //匹配邮箱
+    // let email = "123@qq.com";
+
+    // console.log(email.match(/^\w+@\w+\.\w+$/));
+    // //案例：以字母开始后跟数字字母下划线，5-10位
+    // let username = prompt("请输入用户名");
+    // console.log(/^[a-z]\w{4,9}$/.test(username));
+    // let tel = "010 - 11111111";
+    // // console.log(tel.match(/\d+ - \d{8}/));
+    // console.log(tel.match(/\d+\s-\s\d{8}/));
+    // 匹配任何字符[\d\D]  [\S\s]
+    // let hd=`
+    // <span>
+    //   dsadsadsa@##!!@#$$#%#$@#$%$#%!!@
+    //   WEQWWEWQ!@$#Q
+    //   QW！@#！@！@@！@！123213
+
+    // </span>
+    // `
+    // console.log(hd.match(/<span>[\s\S]+<\/span>/));
+    // 模式问题，i不区分大小写，g全部检测
+    // let hd="hoiuduUnre.com"
+    // console.log(hd.replace(/u/gi,"#"));
+    //   let hd = `
+    // #1 js,200元 #
+    //  #2132 js,200元 #
+    // #12 js,200元 #sadas
+    //    #12312 des,200元 #
+    // `;
+    //   let lesson = hd.match(/^\s*#\d+.+\s+#$/gm).map((v) => {
+    //     v = v.replace(/\s*#\d+\s*/, "").replace(/\s+#/, "");
+    //     // console.log(v);
+    //     [name, price] = v.split(",");
+    //     return { name, price };
+    //   });
+    //   console.log(JSON.stringify(lesson, null, 2));
+  </script>
+</html>

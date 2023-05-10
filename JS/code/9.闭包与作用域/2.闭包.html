@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>闭包</title>
+  </head>
+  <body>
+    <script>
+      // 利用闭包获取价格的区间：
+      //   let b = [1, 23, 4, 5, 6, 7, 78, 6, 34, 1];
+      //   function between(a, b) {
+      //     return function (v) {
+      //       return v >= a && v <= b;
+      //     };
+      //   }
+      //   console.log(b.filter(between(3, 8)));
+      let sub = [
+        {
+          title: "盒子10",
+          click: 111,
+          price: 200,
+        },
+        {
+          title: "盒子11",
+          click: 111,
+          price: 10,
+        },
+        {
+          title: "盒子01",
+          click: 111,
+          price: 30,
+        },
+        {
+          title: "盒子03",
+          click: 111,
+          price: 680,
+        },
+      ];
+      function between(a, b) {
+        return function (v) {
+          return v.price >= a && v.price <= b;
+        };
+      }
+      console.table(sub.filter(between(0, 100)));
+    </script>
+  </body>
+</html>

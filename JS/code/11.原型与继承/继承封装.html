@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>继承的封装</title>
+  </head>
+  <body></body>
+  <script>
+    function extend(sub, sup) {
+      sub.prototype = Object.create(sup.prototype);
+      Object.defineProperty(sub.prototype, "constructor", {
+        value: sub,
+        enumerable: false,
+      });
+    }
+    const address = {
+      getAddress() {
+        return "address"
+      },
+    };
+    const Credit = {
+        __proto__:address,
+      total() {
+        console.log(super.getAddress()+"Credit");
+      },
+    };
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    User.prototype.show = function () {
+      console.log(this.name, this.age);
+    };
+    function Admin(name, age) {
+      User.call(this.name, this.age);
+    }
+    extend(Admin, User);
+    Admin.prototype = Object.assign(Admin.prototype, address, Credit);
+    let admin = new Admin("demo", 19);
+    admin.show();
+    admin.total();
+    admin.getAddress();
+    // function admin(name, age) {
+    //   const instance = Object.create(User.prototype);
+    //   User.call(instance, name, age);
+    //   return instance;
+    // }
+    // let hd = admin("lis", 14);
+    // hd.show();
+
+    // extend(Admin, User);
+    // let admin = new Admin("demo", 11);
+    // admin.show();
+
+    // function Member(...args) {
+    //   User.apply(this, args);
+    // }
+    // User.prototype.show = function () {
+    //   console.log(this.name, this.age);
+    // };
+    // extend(Member, User);
+    // let member = new Member("lisi", 23);
+    // member.show();
+  </script>
+</html>

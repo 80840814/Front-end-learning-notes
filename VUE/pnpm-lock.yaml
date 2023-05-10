@@ -1,0 +1,15 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@element-plus/icons-vue': ^2.0.10
+
+dependencies:
+  '@element-plus/icons-vue': 2.0.10
+
+packages:
+
+  /@element-plus/icons-vue/2.0.10:
+    resolution: {integrity: sha512-ygEZ1mwPjcPo/OulhzLE7mtDrQBWI8vZzEWSNB2W/RNCRjoQGwbaK4N8lV4rid7Ts4qvySU3njMN7YCiSlSaTQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dev: false

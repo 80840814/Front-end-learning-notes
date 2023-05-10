@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="password">
+    <span></span>
+    <script>
+        let name='houdunren';
+        console.log(name.length);
+        console.log(name.toUpperCase());
+        console.log(name.toLowerCase());
+        let ps=document.querySelector("[name='password']");
+        ps.addEventListener("keyup", function(){
+            this.value=this.value.trim();
+            // console.log(this.value.length);
+            let span=document.getElementsByTagName("span");
+            let error="";
+            if (this.value.length<5) {
+                 error="密码不能少于五位";
+            }
+            span[0].innerHTML=error;
+
+        });
+        let hd= "dasdasasas";
+        console.log(hd[0]);
+        for(let i=0;i<hd.length;i++){
+            let span=document.createElement("span");
+            span.style.fontSize=(i+1)*10+"px";
+            span.innerHTML=hd[i];
+            document.body.append(span);
+        }
+
+    </script>
+</body>
+</html>

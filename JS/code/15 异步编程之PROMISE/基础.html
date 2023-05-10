@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基础知识</title>
+  </head>
+  <body></body>
+  <script>
+    // new Promise((resolve,reject)=>{
+
+    //   resolve('成功')
+    //   reject('拒绝')
+    // })
+    // .then(
+    //   value=>{
+    //     console.log('成功业务');
+    //   },
+    //   reason=>{
+    //     console.log('拒绝业务');
+    //   }
+    // )
+    // let promise=new Promise(resolve=>{
+    //   setTimeout(() => {
+    //     resolve()
+    //     console.log('steTimeout');
+    //   }, 0);
+    //   console.log("promise");
+    // }).then(value=>console.log("成功"))
+    // console.log('houdunren');
+    // finally实现异步动画
+    // const promise = new Promise((resolve, reject) => {
+    //   reject("hdcms");
+    // })
+    //   .then((msg) => {
+    //     console.log("reslove");
+    //   })
+    //   .catch((error) => {})
+    //   .finally(() => {
+    //     console.log("永远会执行");
+    //   });
+    // //定时器的封装
+    //     function timeout(delay = 1000) {
+    //       return new Promise((reslove) => setTimeout(reslove, delay));
+    //     }
+    //     timeout(2000)
+    //       .then(() => {
+    //         console.log("houdunren.com");
+    //         return timeout(2000);
+    //       })
+    //       .then((value) => {
+    //         console.log("hdcms");
+    //       });
+    // const hdcms = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    // console.log("第一个异步");
+    //     reject("fail");
+    //   }, 1000);
+    // });
+    // const houdunren = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     console.log("第二个异步");
+    //   }, 1000);
+    // });
+    // Promise.all([hdcms, houdunren])
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    // async function hd() {
+    //   let name=await 'houdunren.com'
+    //   console.log(name);
+    //   // return new Promise((reslove) => {
+    //   //   setTimeout(() => {
+    //   //     reslove("houdunren");
+    //   //   }, 2000);
+    //   // });
+    // }
+    // hd();
+    // hd().then((v) => console.log(v));
+
+    //async延迟函数
+    async function sleep(delay = 2000) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, delay);
+      });
+    }
+    async function show() {
+      for (const user of ["后盾人", "向军"]) {
+        await sleep();
+        console.log(user);
+      }
+    }
+    show();
+    async function hd(){
+      let res=await Promise.all([p1,p2]);
+      console.log(res);
+    }
+  </script>
+</html>

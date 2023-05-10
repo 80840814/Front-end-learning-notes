@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.展开语法</title>
+</head>
+<body>
+    <script>
+        let arr=['11','23231312','4534534'];
+        let hd =['asda','sadas'];
+        for(const value of hd){
+            arr.push(value);
+            // push在arr后面追加数据
+        }
+        arr=[...arr,...hd];
+        console.table(arr);
+        function sum(...args) {
+            return args.reduce((s,v)=>{
+                return (s+=v);
+            },0)
+        }
+        console.log(sum(1,3,45,6,7));
+    </script>
+</body>
+</html>

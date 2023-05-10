@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不记录组</title>
+  </head>
+  <body>
+    <input type="text" name="username" id="" />
+  </body>
+  <script>
+    // let hd = `
+    // http://sadsa.com
+    // https://www.qwe.com
+    // https://1212.cn
+    // `;
+    // let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|cn|top))/gi;
+    // let urls = [];
+    // while ((res = reg.exec(hd))) {
+    //   urls.push(res[1]);
+    // }
+    // console.log(urls);
+    // let hd='qweqwqwewqq'
+    // console.log(hd.match(/(qw)+/gi));
+    //对用户名的验证
+    // document
+    //   .querySelector(`[name="username"]`)
+    //   .addEventListener("keyup", e=> {
+    //     const value = e.target.value;
+    //     let reg = /^[a-z][\w-\.]{3,7}$/gi;
+    //     console.log(reg.test(value));
+    //   });
+    const input = document.querySelector(`[name="username"]`);
+    input.addEventListener("keyup", (e) => {
+      const value = e.target.value;
+      const regs = [/^[a-z0-9]{5,10}$/i, /[A - Z]/, /[0-9]/];
+      let state = regs.every((e) => e.test(value));
+      console.log(state ? "true" : "false");
+    });
+  </script>
+</html>

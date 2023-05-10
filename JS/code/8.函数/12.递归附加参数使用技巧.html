@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12.递归附加参数使用技巧</title>
+  </head>
+  <body></body>
+  <script>
+    let lessons = [
+      { title: "php", click: 89 },
+      {
+        title: "js",
+        click: 99,
+      },
+      {
+        title: "web",
+        click: 111,
+      },
+      { title: "sda", click: 111 },
+      {
+        title: "asd",
+        click: 11,
+      },
+    ];
+    function change(lessons, num = 100, i = 0) {
+      if (i == lessons.length) {
+        return lessons;
+      }
+      lessons[i].click += num;
+      return change(lessons, num, ++i);
+    }
+
+    console.table(change(lessons, 40));
+
+    lessons = lessons.map(function (item) {
+      console.log(item);
+      item.click += 100;
+      return item;
+    });
+    console.table(lessons);
+  </script>
+</html>

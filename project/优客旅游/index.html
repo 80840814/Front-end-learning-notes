@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="UTF-8">
+		<title>首页--旅游网站</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/basic.css">
+		<style type="text/css">
+			@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+			body {
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			.neon {
+				color: #cce7f8;
+				margin-top: 1px;
+				
+				font-size: 45px;
+				width: 360px;
+				float: left;
+				font-family: 'Pacifico', cursive;
+				text-transform: uppercase;
+				animation: shining 0.1s alternate infinite;
+			}
+
+			@keyframes shining {
+				from {
+					text-shadow: 0 0 6px rgba(182, 211, 207, 0.9),
+						0 0 30px rgba(182, 211, 207, 0.3), 0 0 12px rgba(15, 115, 223, 0.5),
+						0 0 21px rgba(15, 115, 223, 0.9), 0 0 34px rgba(15, 115, 223, 0.8),
+						0 0 54px rgba(15, 115, 223, 0.9);
+				}
+
+				to {
+					text-shadow: 0 0 6px rgba(182, 211, 207, 1),
+						0 0 30px rgba(182, 211, 207, 0.4), 0 0 12px rgba(15, 115, 223, 0.6),
+						0 0 22px rgba(15, 115, 223, 0.8), 0 0 38px rgba(15, 115, 223, 0.9),
+						0 0 60px rgba(15, 115, 223, 1);
+				}
+				.slide_nav {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		</style>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+			/* 鼠标特效 */
+			var a_idx = 0;
+			jQuery(document).ready(function($) {
+				$("body").click(function(e) {
+					var a = new Array("曼谷", "马尔代夫", "海南", "大阪", "法瑞意德", "巴厘岛", "塞舌尔迪拜", "花样姐姐土耳其", "大阪-京都", "呼伦贝尔", "首尔", "丽江");
+					var $i = $("<span/>").text(a[a_idx]);
+					a_idx = (a_idx + 1) % a.length;
+					var x = e.pageX,
+						y = e.pageY;
+					$i.css({
+						"z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+						"top": y - 20,
+						"left": x,
+						"position": "absolute",
+						"font-weight": "bold",
+						"color": "#ff6651"
+					});
+			  $("body").append($i);
+					$i.animate({
+							"top": y - 180,
+							"opacity": 0
+						},
+			 		1500,
+						function() {
+							$i.remove();
+						});
+				});
+			});
+		</script>
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+				<script src="https://fastly.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>		
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+				<script src="js/bootoast.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<nav id="nav" class="nav">
+				<div class="neon">优客旅游</div>
+				<ul>
+					<li class="active"><a href="index.html">首页</a></li>
+					<li><a href="informations.html">优客旅游</a></li>
+					<li><a href="scenery.html">风景欣赏</a></li>
+					<li><a href="login.html">用户登录</a></li>
+				</ul>
+			</nav>
+		</header>
+			<div id="headline" style="height: 300px; width: 100%;">
+				<div class="headline">
+					<hgroup>
+						<div id="myCarousel" class="carousel slide slide_nav">
+						    <!-- 轮播（Carousel）指标 -->
+						    <ol class="carousel-indicators">
+						        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="1"></li>
+						        <li data-target="#myCarousel" data-slide-to="2"></li>
+						    </ol>   
+						    <!-- 轮播（Carousel）项目 -->
+						    <div class="carousel-inner">
+						        <div class="item active">
+						            <img src="img/headline.jpg" alt="First slide">
+						        </div>
+						        <div class="item">
+						            <img src="img/headline.jpg" alt="Second slide">
+						        </div>
+						        <div class="item">
+						            <img src="img/headline.jpg" alt="Third slide">
+						        </div>
+						    </div>
+						    <!-- 轮播（Carousel）导航 -->
+						    <a class="carousel-control left" href="#myCarousel" 
+						       data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+						    <a class="carousel-control right" href="#myCarousel" 
+						       data-slide="next">&rsaquo;</a>
+						</div>
+					</hgroup>
+					<div class="search">
+						<input class="input" type="text" placeholder="请输入陆游景点或城市">
+						<div class="button">搜索</div>
+					</div>
+				</div>
+			
+			
+		</div>
+		<div class="tour">
+			<section class="news">
+				<h2>热门旅游</h2>
+				<p>国内旅游、国外旅游、自助旅游、自驾旅游、油轮签证、主题旅游等各种最新热门旅游推荐</p>
+			</section>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+
+				</figcaption>
+			</figure>
+			<figure>
+				<img src="img/tour1.jpg" alt="">
+				<figcaption>
+					<strong class="title"> &lt;曼谷-芭提雅6日游&gt;</strong> 包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/成人自费券
+					<div class="info">
+						<em class="sat">满意度 77%</em>
+						<span class="price">￥ <strong>2864</strong> 起</span>
+					</div>
+					<div class="type">国内长线</div>
+				</figcaption>
+			</figure>
+		</div>
+	</body>
+</html>

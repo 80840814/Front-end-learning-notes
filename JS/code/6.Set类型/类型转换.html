@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>类型转换</title>
+  </head>
+  <body></body>
+  <script>
+    let set = new Set(["houdunren", "hdcms"]);
+    console.log(Array.from(set));
+    //转为数组
+    console.log(...set);
+    let hd = new Set("1321321456");
+    console.log(hd);
+    let arr = [...hd].filter(function (item) {
+      return item < 3;
+    });
+    hd = new Set(arr);
+    console.log(hd);
+
+    let arr = [1, 23, 4, 45, 45, 56, 6];
+    console.log(arr);
+    console.log(new Set(arr));
+    arr = [...new Set(arr)];
+    console.log(arr);
+  </script>
+</html>

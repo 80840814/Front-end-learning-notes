@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+
+        }
+        li {
+            border: 1px solid #000;
+            width: 200px;
+            height:40px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // let hd=[
+        //     {title:"11111",lesson:3},
+        //     {title:"22222",lesson:6},
+        //     {title:"333333",lesson:4},
+        // ];
+        // document.write(`<table border="1" width="100%">
+        //     <thead><tr><th>第一列</th><th>第二列</th></tr></thead>`)
+        // for(let video of hd){
+        //     document.write(`
+        //     <tr><td>${video.title}</td><td>${video.lesson}</td></tr>
+        //     `)
+        // }
+        // document.write("</table>")
+       let lis= document.querySelectorAll("li");
+       for (const li of lis) {
+            li.addEventListener("click",function(){
+                li.style.backgroundColor="#000";
+            })
+       }
+    </script>
+    
+</body>
+</html>

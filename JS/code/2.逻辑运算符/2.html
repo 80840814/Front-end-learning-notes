@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短路特性</title>
+</head>
+<body>
+    <script>
+        let a=6,b=0;
+        let f=b||a;
+        console.log(f);
+        let sex=prompt("请输入性别：")||"保密";
+        console.log(sex);
+        //输入的时候就显示输入的内容，不输入的时候就显示是保密，
+        // 谁碰到真，就显示哪个
+        function start (num){
+            return "*".repeat(num||5);
+            
+        }
+        console.log(start());
+
+    </script>
+</body>
+</html>

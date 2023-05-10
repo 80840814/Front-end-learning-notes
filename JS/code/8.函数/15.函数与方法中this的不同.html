@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.函数与方法中this的不同</title>
+  </head>
+  <body></body>
+  <script>
+    //this
+    // let edu = {
+    //   name: "houdren",
+    //   show: function () {
+    //     return this.name;
+    //   },
+    // };
+    // console.log(edu.show());
+
+    let lessons = {
+      site: "demo",
+      lists: ["11", "22", "33"],
+      show: function () {
+        // const self = this;
+        return this.lists.map(function (value) {
+          return `${this.site}-${value}`;
+        }, this);
+      },
+    };
+    console.table(lessons.show());
+  </script>
+</html>

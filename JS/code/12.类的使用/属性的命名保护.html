@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>命名保护</title>
+  </head>
+  <body></body>
+  <script>
+    const Host=Symbol('主机')
+    class User {
+        _url='dhcims.com'
+      constructor(name) {
+        this.name = name;
+      }
+
+      //保护方法-命名规则
+      set url(url){
+        if(!/^https?:/i.test(url)){
+            throw new Error('非法网址')
+        }
+        this._url=url
+      }
+    }
+    let hd = new User("dunren");
+    hd.name = "lisi";
+    hd.url='https://cms'
+    
+    console.log(hd);
+    
+  </script>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局</title>
+    <!-- <link rel="stylesheet" href="./css/iconfont.css"> -->
+    
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
+
+</head>
+<body>
+    <!-- header start -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="./images/logo-1.png" alt="">
+            </a>
+            <span class="icon-nav xxl-hide sm-show" id="J_nav">
+                <img src="./images/vuejs.png" alt="">
+            </span>
+            <ul class="xxl-flex sm-hide sm-flex" id="J_nav_list">
+                <li><a href="#">概况</a></li>
+                <li><a href="#">教务</a></li>
+                <li><a href="#">营销</a></li>
+                <li><a href="#">运销</a></li>
+                <li><a href="#">用户</a></li>
+                <li><a href="#">交易</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- end header -->
+    <!-- menu start -->
+    <nav class="menu" id="J_menu">
+        <div class="menu-item">
+            <div class="menu-item-title">
+                <span class="icon-menu">
+                    <img src="./images/课堂.png" alt="">
+                </span>
+                教学管理</div>
+            <ul>
+                <li><a href="#">班级管理</a></li>
+                <li><a href="#">课程管理</a></li>
+                <li><a href="#">直播管理</a></li>
+                <li><a href="#">分类标签</a></li>
+                <li><a href="#">题库管理</a></li>
+            </ul>
+        </div>
+        <div class="menu-item">
+
+            <div class="menu-item-title">
+                <span class="icon-menu">
+                    <img src="./images/课堂.png" alt="">
+                </span>
+                教学管理
+            </div>
+            <ul>
+                <li><a href="#">班级管理</a></li>
+                <li><a href="#">课程管理</a></li>
+                <li><a href="#">直播管理</a></li>
+                <li><a href="#">分类标签</a></li>
+                <li><a href="#">题库管理</a></li>
+            </ul>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-title">
+                <span class="icon-menu">
+                    <img src="./images/课堂.png" alt="">
+                </span>
+                教学管理
+            </div>
+            <ul>
+                <li><a href="#">班级管理</a></li>
+                <li><a href="#">课程管理</a></li>
+                <li><a href="#">直播管理</a></li>
+                <li><a href="#">分类标签</a></li>
+                <li><a href="#">题库管理</a></li>
+            </ul>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-title">
+                <span class="icon-menu">
+                    <img src="./images/课堂.png" alt="">
+                </span>
+                教学管理
+            </div>
+            <ul>
+                <li><a href="#">班级管理</a></li>
+                <li><a href="#">课程管理</a></li>
+                <li><a href="#">直播管理</a></li>
+                <li><a href="#">分类标签</a></li>
+                <li><a href="#">题库管理</a></li>
+            </ul>
+        </div>
+        <button id="button" class="xxl-hide xl-show">开关</button>
+    </nav>
+    <!-- end menu -->
+    <!-- main start -->
+    <main class="main">
+        <div class="main-row">
+            <div class="col col-gap col-xxl-3 col-lg-6 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-gap col-sm-gap col-xxl-3 col-lg-6 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-gap col-gap2 col-xxl-3 col-lg-6 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-gap col-gap2 col-xxl-3 col-lg-6 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+        </div>
+        <div class="main-row row">
+            <div class="col col-xxl-8 col-md-12">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-xxl-4 col-md-12">
+                <div class="col-content"></div>
+            </div>
+        </div>
+        <div class="main-row row">
+            <div class="col col-xxl-4 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-xxl-8 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+        </div>
+        <div class="main-row row">
+            <div class="col col-xxl-4 col-md-6 col-sm-12">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-xxl-4 col-md-6 col-sm-12" id="J_echarts1">
+                <div class="col-content"></div>
+            </div>
+            <div class="col col-xxl-4 col-md-12" id="J_echarts2">
+                <div class="col-content"></div>
+            </div>
+
+        </div>
+    </main>
+    <!-- end main -->
+    <!-- footer start -->
+    <footer class="footer"></footer>
+    <!-- end footer -->
+    <script>
+        var nav =document.getElementById('J_nav');
+        var navlist =document.getElementById('J_nav_list');
+        nav.onclick=function(){
+            navlist.classList.toggle('sm-flex')
+        }
+        // 左侧菜单
+var menuTitles=document.querySelectorAll('#J_menu .menu-item .menu-item-title');
+var len = menuTitles.length;
+var menu=document.getElementById('J_menu');
+for(var i =0;i<len;i++){
+    menuTitles[i].flag='hidden';
+    menuTitles[i].onclick=function(){
+        if(this.flag=='hidden'){
+            this.classList.add('menu-item-active');
+            var h = this.nextElementSibling.clientHeight;
+            this.parentNode.style.height=h+40+'px';
+            // 缩小情况下点击
+            menu.style.width='260px';
+            this.flag='show';
+        }else{
+            this.classList.remove('menu-item-active');
+            this.parentNode.style.height='40px';
+            this.flag='hidden';
+        }
+        
+    }
+ }
+    window.addEventListener('resize',function(){
+    var w = document.documentElement.clientWidth;
+    if(w>1400){
+        menu.style.width='260px';
+    }
+    if(w<=1400){
+        for(var i = 0;i<len;i++){
+            menuTitles[i].parentNode.style.height='40px';
+            menu.style.width='75px';
+            menuTitles[i].classList.remove('menu-item-active');
+            this.flag='hidden';
+        }
+    }
+ })
+//  开关按钮
+var onOff =document.getElementById('button');
+onOff.onclick=function() {
+    var w=menu.clientWidth;
+    if(w<100){
+        // 开
+        menu.style.width='260px';
+        
+    }else{
+        // 关
+        menu.style.width='75px';
+        for(var  i=0;i<len;i++){
+            menuTitles[i].classList.remove('menu-item-active');
+            menuTitles[i].parentNode.style.height='40px';
+            menuTitles[i].flag='hidden';
+        }
+    }
+}
+
+    </script>
+    <script>
+ 
+ var myChart2 = echarts.init(document.getElementById("J_echarts2"));
+ var myChart1 = echarts.init(document.getElementById("J_echarts1"));
+var option1 = {
+    title: {
+        text: 'Referer of a Website',
+        subtext: 'Fake Data',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left'
+    },
+    series: [
+        {
+            name: 'Access From',
+            type: 'pie',
+            radius: '50%',
+            data: [
+                { value: 1048, name: 'Search Engine' },
+                { value: 735, name: 'Direct' },
+                { value: 580, name: 'Email' },
+                { value: 484, name: 'Union Ads' },
+                { value: 300, name: 'Video Ads' }
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+var option2 = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+                color: 'rgba(180, 180, 180, 0.2)'
+            }
+        }
+    ]
+};
+myChart1.setOption(option1);
+myChart2.setOption(option2);
+window.addEventListener("resize", function(){
+    myChart1.resize();
+    myChart2.resize();
+})
+    </script>
+
+</body>
+</html>

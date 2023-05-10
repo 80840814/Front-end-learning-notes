@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>课程介绍与数组引用类型分析</title>
+  </head>
+  <body>
+    <script>
+      const arry = new Array("11", "2222", "33333", 1, 1, 2, 3);
+      console.log(arry);
+      console.log(arry.join("|"));
+      // 连接方式
+      const arry = [1, 12, 3, 45, 67, "2121", "12321"];
+      let hd = arry;
+      console.log(arry);
+      console.log(typeof arry);
+      // 类型：对象
+      hd[2] = "doudunren";
+      console.log(hd);
+      console.log(arry);
+      let a = 1;
+      let b = a;
+      b = 88;
+      console.log(b);
+      console.log(a);
+      const arry = [1, 12, 3, 45, 67, "2121", "12321"];
+      console.table(arry);
+    </script>
+  </body>
+</html>

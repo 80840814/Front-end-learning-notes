@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>访问器</title>
+  </head>
+  <body></body>
+  <script>
+    "use script";
+    let lesson = {
+      lists: [
+        { name: "js", price: 100 },
+        { name: "css", price: 400 },
+        { name: "nodejs", price: 200 },
+      ],
+      get total() {
+        return this.lists.reduce((t, l) => t + l.price, 0);
+      },
+    };
+    console.log(lesson.total);
+    //使用访问器批量设置属性
+    let web = {
+      name: "dunren",
+      url: "www.baidu.com",
+      get site() {
+        return `${this.name}的网址是${this.url}`;
+      },
+      set site(value) {
+        [this.name, this.url] = value.split(",");
+      },
+    };
+    web.site = "kaiyuan,www.hao123.com";
+    console.log(web.site);
+  </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基础问题</title>
+  </head>
+  <body></body>
+  <script>
+    // let user = {
+    //   name: "sda",
+    //   "my age": 18,
+    // };
+    // console.log(user.name);
+    // console.log(uesr["name"]);
+    // console.log(uesr["my age"]);
+    // for (const key in user) {
+    //   console.log(user[key]);
+    // }
+
+    // // 动态添加
+    // user.age = 19;
+    // user.get = function () {
+    //   return `${this.name}的年龄是${this.age}`;
+    // };
+    // console.log(user.get());
+    // delete user.age;
+    // console.log(user.get());
+    let user = { name: "ww", age: 22 };
+    let hd = { ...user, lang: "zh" };
+    console.log(hd);
+    function upload(params) {
+      let config = {
+        type: "*.jpg,*png",
+        size: 1000,
+      };
+      config = { ...config, ...params };
+      console.log(config);
+    }
+    console.log(upload({ size: 99 ,type:'*gif'}));
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set元素检测与管理</title>
+  </head>
+  <body></body>
+  <script>
+    let set = new Set(["hdcms", "hdr"]);
+    let set1 = new Set("houren");
+
+    console.log(set.size);
+    console.log(set1);
+    console.log(set.has("hdr"));
+    // 判断元素是否存在
+    console.log(set.delete("hdr"));
+    console.log(set.size);
+    console.log(set.clear());
+    console.log(set);
+  </script>
+</html>

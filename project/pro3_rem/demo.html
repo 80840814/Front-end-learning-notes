@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,viewport-fit=cover,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabbar {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-bottom: constant(safe-area-inset-bottom);
+            height: calc(50px+constant(safe-area-inset-bottom));
+            @supports not(constant(safe-area-inset-bottom)){
+                .tabbar{
+                    padding-bottom:30px;
+                }
+            }
+        }
+        html,body {
+            margin: 0;
+        }
+        .box {
+            width: 4rem;
+            height: 1.6rem;
+            background-color: red;
+            margin: 0 auto;
+        }
+    </style>
+    
+</head>
+<body>
+   <div class="box"></div>
+   <script>
+    // 动态计算rem的大小
+    function initPage(){
+        // 假设把页面分成10份
+        var html =document.documentElement;
+        // 获取页面的可视宽
+        var clientWidth=html.clientWidth;
+        html.style.fontSize=(clientWidth/10)+'px';
+
+
+        console.log(clientWidth);
+        
+    }
+    initPage();
+    window.onresize=initPage;
+    console.log(html.style.fontSize);
+</script>
+
+   
+</body>
+</html>

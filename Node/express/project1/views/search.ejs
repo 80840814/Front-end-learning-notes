@@ -1,0 +1,17 @@
+<div class="select">
+    <form action="/like" method="get" id="myform" >
+        <select onchange="submitForm()" name="selectVal">
+            <% bannerList.forEach(function(item){%>
+            <option value="<%= item.name %>"><%= item.name %></option>
+            <% }) %> 
+        </select>
+        <div class="search">
+            <input type="text" name="like">
+            <button class="search-btns">
+                <img src="/images/search.png" alt="">
+            </button>
+        </div>
+    </form>
+    
+    <button id="addBtn" class="add-btn">添加</button>
+</div>
